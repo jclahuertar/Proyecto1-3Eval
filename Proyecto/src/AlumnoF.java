@@ -1,0 +1,105 @@
+
+public class AlumnoF extends Persona{
+
+	//	nombreAlum, apell1Alum, apell2Alum, tipoIdAulm, idAlum, fechaNacAlum, paisNacAlum, nacionalidadAlum,
+	//	sexoAlum, emailAlum, telefonoAlum;
+
+	//Alumno formulario
+	private String paisNacAlum;
+	private String nacionalidadAlum;
+	private String sexoAlum;
+	private String emailAlum;
+	private String telefonoAlum;
+	private String repite;
+	private FamiliarF familiar1;
+	private FamiliarF familiar2;
+
+	public AlumnoF(String dni_nie, String nombre, String apellidoUno, String apellidoDos, String fechaNac,
+			String paisNacAlum, String nacionalidadAlum, String sexoAlum, String emailAlum, String telefonoAlum,
+			String repite, FamiliarF familiar1, FamiliarF familiar2) {
+		super(dni_nie, nombre, apellidoUno, apellidoDos, fechaNac);
+		this.paisNacAlum = paisNacAlum;
+		this.nacionalidadAlum = nacionalidadAlum;
+		this.sexoAlum = sexoAlum;
+		this.emailAlum = emailAlum;
+		this.telefonoAlum = telefonoAlum;
+		this.repite = repite;
+		this.familiar1 = familiar1;
+		this.familiar2 = familiar2;
+	}
+	
+	public String getPaisNacAlum() {
+		return paisNacAlum;
+	}
+	public void setPaisNacAlum(String paisNacAlum) {
+		this.paisNacAlum = paisNacAlum;
+	}
+
+	public String getNacionalidadAlum() {
+		return nacionalidadAlum;
+	}
+
+	public void setNacionalidadAlum(String nacionalidadAlum) {
+		this.nacionalidadAlum = nacionalidadAlum;
+	}
+
+	public String getSexoAlum() {
+		return sexoAlum;
+	}
+
+	public void setSexoAlum(String sexoAlum) {
+		this.sexoAlum = sexoAlum;
+	}
+
+	public String getEmailAlum() {
+		return emailAlum;
+	}
+
+	public void setEmailAlum(String emailAlum) {
+		this.emailAlum = emailAlum;
+	}
+
+	public String getTelefonoAlum() {
+		return telefonoAlum;
+	}
+
+	public void setTelefonoAlum(String telefonoAlum) {
+		this.telefonoAlum = telefonoAlum;
+	}
+
+	public String getRepite() {
+		return repite;
+	}
+
+	public void setRepite(String repite) {
+		this.repite = repite;
+	}
+
+	public FamiliarF getFamiliar1() {
+		return familiar1;
+	}
+
+	public void setFamiliar1(FamiliarF familiar1) {
+		this.familiar1 = familiar1;
+	}
+
+	public FamiliarF getFamiliar2() {
+		return familiar2;
+	}
+
+	public void setFamiliar2(FamiliarF familiar2) {
+		this.familiar2 = familiar2;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "AlumnoF [paisNacAlum=" + paisNacAlum + ", nacionalidadAlum=" + nacionalidadAlum + ", sexoAlum="
+				+ sexoAlum + ", telefonoAlum=" + telefonoAlum + ", repite=" + repite + "]";
+
+	}
+
+
+
+
+
+}

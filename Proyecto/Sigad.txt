@@ -1,0 +1,5 @@
+﻿AAAAAAaaaa~AAAAAAAA~Nuria~MUJER~12345678T~2/11/04 0:00~Almunia de Doña Godina (La)~Zaragoza~España~España~PADRE~Pedro~aaaaaaaaaaaa~aaaaaaaaaaaa~45612378R~976101010~646101010~Si~Si
+BBBBBbbb~BBBBBBBBBBb~María~MUJER~98765432Y~2/08/06 0:00~Almunia de Doña Godina (La)~Zaragoza~España~España~PADRE~Gregorio~bbbbbbbbbb~bbbbbbbbbbbb~32165498S~680101011~699101011~Si~Si
+AAAAAAaaaa~AAAAAAAA~Julia~MUJER~12345678T~2/05/08 0:00~Almunia de Doña Godina (La)~Zaragoza~España~España~PADRE~Pedro~cccccccccc~cccccccccc~45612378R~384101012~752101012~No~No
+BBBBBbbb~BBBBBBBBBBb~Ana~MUJER~98765432Y~2/02/10 0:00~Almunia de Doña Godina (La)~Zaragoza~España~España~PADRE~Gregorio~ddddddddddd~dddddddddd~32165498S~88101013~805101013~No~No
+AAAAAAaaaa~AAAAAAAA~Pilar~MUJER~12345678T~2/11/11 0:00~Almunia de Doña Godina (La)~Zaragoza~España~España~PADRE~Pedro~eeeeeeeeeee~eeeeeeeeeee~45612378R~88101013~858101014~Si~Si

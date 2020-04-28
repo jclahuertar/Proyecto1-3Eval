@@ -3,30 +3,29 @@ public class Prematricula {
 
 	// todos los atributos de clase son de tipo string, pero los separamos en su declaración por bloques homogéneos
 	
-	private String marcaTemporal, email;
+	private String marcaTemporal;
+	private String email;
 	
-	private AlumnoF alumnoF;
-	private Centro centroF;
-	private FamiliarF familiarF;
-	private Destinatario destinatario;
-	private Itinerario itinerario;
+	private AlumnoF alumno;
+	private CentroF centro = null;
+	private FamiliarF familiar1;
+	private FamiliarF familiar2= null;
+	private DestinatarioF destinatario;
+	private ItinerarioF itinerario;
 	
-	
-	
-	
-	public Prematricula(String marcaTemporal, String email, AlumnoS alum, CentroF cent, FamiliarS fami, Destinatario dest,
-	Itinerario itin) {
-		
+	public Prematricula(String marcaTemporal, String email, AlumnoF alumno, CentroF centro, FamiliarF familiar1,
+			FamiliarF familiar2, DestinatarioF destinatario, ItinerarioF itinerario) {
+		//super();
 		this.marcaTemporal = marcaTemporal;
 		this.email = email;
-		alumnoF = alum;
-		centroF = cent;
-		familiarF = fami;
-		destinatario = dest;
-		itinerario = itin;				
-	}// constructor
+		this.alumno = alumno;
+		this.centro = centro;
+		this.familiar1 = familiar1;
+		this.familiar2 = familiar2;
+		this.destinatario = destinatario;
+		this.itinerario = itinerario;
+	}
 
-	
 	public String getMarcaTemporal() {
 		return marcaTemporal;
 	}
@@ -43,54 +42,64 @@ public class Prematricula {
 		this.email = email;
 	}
 
-	public AlumnoS getAlumnoF() {
-		return alumnoF;
+	public AlumnoF getAlumno() {
+		return alumno;
 	}
 
-	public void setAlumnoF(AlumnoS alumnoF) {
-		this.alumnoF = alumnoF;
+	public void setAlumno(AlumnoF alumno) {
+		this.alumno = alumno;
 	}
 
-	public CentroF getCentroF() {
-		return centroF;
+	public CentroF getCentro() {
+		return centro;
 	}
 
-	public void setCentroF(CentroF centroF) {
-		this.centroF = centroF;
+	public void setCentro(CentroF centro) {
+		this.centro = centro;
 	}
 
-	public FamiliarS getFamiliarF() {
-		return familiarF;
+	public FamiliarF getFamiliar1() {
+		return familiar1;
 	}
 
-	public void setFamiliarF(FamiliarS familiarF) {
-		this.familiarF = familiarF;
+	public void setFamiliar1(FamiliarF familiar1) {
+		this.familiar1 = familiar1;
 	}
 
-	public Destinatario getDestinatarioF() {
+	public FamiliarF getFamiliar2() {
+		return familiar2;
+	}
+
+	public void setFamiliar2(FamiliarF familiar2) {
+		this.familiar2 = familiar2;
+	}
+
+	public DestinatarioF getDestinatario() {
 		return destinatario;
 	}
 
-	public void setDestinatarioF(Destinatario destinatarioF) {
-		this.destinatario = destinatarioF;
+	public void setDestinatario(DestinatarioF destinatario) {
+		this.destinatario = destinatario;
 	}
 
-	public Itinerario getItinerario() {
+	public ItinerarioF getItinerario() {
 		return itinerario;
 	}
 
-	public void setItinerario(Itinerario itinerario) {
+	public void setItinerario(ItinerarioF itinerario) {
 		this.itinerario = itinerario;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Prematricula [marcaTemporal=" + marcaTemporal + ", email=" + email + ", alumnoF=" + alumnoF
-				+ ", centroF=" + centroF + ", familiarF=" + familiarF + ", destinatarioF=" + destinatario
+		return "Prematricula [marcaTemporal=" + marcaTemporal + ", email=" + email + ", alumno=" + alumno + ", centro="
+				+ centro + ", familiar1=" + familiar1 + ", familiar2=" + familiar2 + ", destinatario=" + destinatario
 				+ ", itinerario=" + itinerario + "]";
 	}
-
+	
+	
+	
+	
 	
 	
 	

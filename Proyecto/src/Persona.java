@@ -1,27 +1,21 @@
 
 public class Persona {
 	
-	private String dni_nie;
-	private String nombre;     
-	private String apellidoUno;
-	private String apellidoDos;
-	private String fechaNac;
-	
-	public Persona(String dni_nie, String nombre, String apellidoUno,
-			String apellidoDos, String fechaNac) {
-		this.dni_nie = dni_nie;
+	private String nombre;     // [2]
+	private String apellidoUno;// [3]
+	private String apellidoDos;// [4]
+	private String tipoId;     // [5]
+	private String dni_nie;    // [6]
+	private String fechaNac;   // [7]
+
+	public Persona(String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie,
+			String fechaNac) {
 		this.nombre = nombre;
 		this.apellidoUno = apellidoUno;
 		this.apellidoDos = apellidoDos;
-		this.fechaNac = fechaNac;
-	}
-
-	public String getDni_nie() {
-		return dni_nie;
-	}
-
-	public void setDni_nie(String dni_nie) {
+		this.tipoId = tipoId;
 		this.dni_nie = dni_nie;
+		this.fechaNac = fechaNac;
 	}
 
 	public String getNombre() {
@@ -48,6 +42,22 @@ public class Persona {
 		this.apellidoDos = apellidoDos;
 	}
 
+	public String getTipoId() {
+		return tipoId;
+	}
+
+	public void setTipoId(String tipoId) {
+		this.tipoId = tipoId;
+	}
+
+	public String getDni_nie() {
+		return dni_nie;
+	}
+
+	public void setDni_nie(String dni_nie) {
+		this.dni_nie = dni_nie;
+	}
+
 	public String getFechaNac() {
 		return fechaNac;
 	}
@@ -56,12 +66,5 @@ public class Persona {
 		this.fechaNac = fechaNac;
 	}
 
-
-	@Override
-	public String toString() {
-		return "Persona dni_nie= " + dni_nie + " nombre= " + nombre + " apellido Uno = " + apellidoUno + " apellido Dos= "
-				+ apellidoDos + " fechaNac= " + fechaNac;
-	}
-
-
+	
 }

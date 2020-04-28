@@ -1,0 +1,24 @@
+
+public class Prematricula {
+
+	// todos los atributos de clase son de tipo string, pero los separamos en su declaración por bloques homogéneos
+	
+	private String marcaTemporal, email;
+	private AlumnoF alumno;
+	private CentroF centro = null;
+	private FamiliarF familiar1;
+	private FamiliarF familiar2= null;
+	private DestinatarioF destinatario;
+	private ItinerarioF itinerario;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}// class
+

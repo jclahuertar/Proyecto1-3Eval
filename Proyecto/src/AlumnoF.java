@@ -1,31 +1,38 @@
 
 public class AlumnoF extends Persona{
 
-	//	nombreAlum, apell1Alum, apell2Alum, tipoIdAulm, idAlum, fechaNacAlum, paisNacAlum, nacionalidadAlum,
-	//	sexoAlum, emailAlum, telefonoAlum;
+	//	nombre, apell1, apell2, tipoId, id, fechaNac  (att de Persona)
+	//  paisNacAlum, nacionalidadAlum, sexoAlum, emailAlum, telefonoAlum, repite  (att de Alumno)
 
 	//Alumno formulario
-	private String paisNacAlum;
-	private String nacionalidadAlum;
-	private String sexoAlum;
-	private String emailAlum;
-	private String telefonoAlum;
-	private String repite;
-	private FamiliarF familiar1;
-	private FamiliarF familiar2;
-
-	public AlumnoF(String dni_nie, String nombre, String apellidoUno, String apellidoDos, String fechaNac,
-			String paisNacAlum, String nacionalidadAlum, String sexoAlum, String emailAlum, String telefonoAlum,
-			String repite, FamiliarF familiar1, FamiliarF familiar2) {
-		super(dni_nie, nombre, apellidoUno, apellidoDos, fechaNac);
+	private String paisNacAlum;      //[8]
+	private String nacionalidadAlum; //[9]
+	private String sexoAlum;         //[10]
+	private String emailAlum;        //[11]
+	private String telefonoAlum;     //[12]
+	private String repite;           //[21]
+	
+	public AlumnoF(String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie,
+			String fechaNac, String paisNacAlum, String nacionalidadAlum, String sexoAlum, String emailAlum,
+			String telefonoAlum, String repite) {
+		super(nombre, apellidoUno, apellidoDos, tipoId, dni_nie, fechaNac);
 		this.paisNacAlum = paisNacAlum;
 		this.nacionalidadAlum = nacionalidadAlum;
 		this.sexoAlum = sexoAlum;
 		this.emailAlum = emailAlum;
 		this.telefonoAlum = telefonoAlum;
 		this.repite = repite;
-		this.familiar1 = familiar1;
-		this.familiar2 = familiar2;
+	}
+
+	public AlumnoF(String[] campos) {
+		super(campos[2], campos[3], campos[4], campos[5], campos[6], campos[7]);
+		this.paisNacAlum = campos[8];
+		this.nacionalidadAlum = campos[9];
+		this.sexoAlum = campos[10];
+		this.emailAlum = campos[11];
+		this.telefonoAlum = campos[12];
+		this.repite = campos[21];
+
 	}
 	
 	public String getPaisNacAlum() {
@@ -74,30 +81,6 @@ public class AlumnoF extends Persona{
 	public void setRepite(String repite) {
 		this.repite = repite;
 	}
-
-	public FamiliarF getFamiliar1() {
-		return familiar1;
-	}
-
-	public void setFamiliar1(FamiliarF familiar1) {
-		this.familiar1 = familiar1;
-	}
-
-	public FamiliarF getFamiliar2() {
-		return familiar2;
-	}
-
-	public void setFamiliar2(FamiliarF familiar2) {
-		this.familiar2 = familiar2;
-	}
-
-	@Override
-	public String toString() {
-		return super.toString() + "AlumnoF [paisNacAlum=" + paisNacAlum + ", nacionalidadAlum=" + nacionalidadAlum + ", sexoAlum="
-				+ sexoAlum + ", telefonoAlum=" + telefonoAlum + ", repite=" + repite + "]";
-
-	}
-
 
 
 

@@ -1,0 +1,88 @@
+
+public class AlumnoF extends Persona{
+
+	//	nombreAlum, apell1Alum, apell2Alum, tipoIdAulm, idAlum, fechaNacAlum, paisNacAlum, nacionalidadAlum,
+	//	sexoAlum, emailAlum, telefonoAlum, repite;
+
+	//Alumno formulario
+	private String paisNacAlum;      //[8]
+	private String nacionalidadAlum; //[9]
+	private String sexoAlum;         //[10]
+	private String emailAlum;        //[11]
+	private String telefonoAlum;     //[12]
+	private String repite;           //[21]
+	
+	public AlumnoF(String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie,
+			String fechaNac, String paisNacAlum, String nacionalidadAlum, String sexoAlum, String emailAlum,
+			String telefonoAlum, String repite) {
+		super(nombre, apellidoUno, apellidoDos, tipoId, dni_nie, fechaNac);
+		this.paisNacAlum = paisNacAlum;
+		this.nacionalidadAlum = nacionalidadAlum;
+		this.sexoAlum = sexoAlum;
+		this.emailAlum = emailAlum;
+		this.telefonoAlum = telefonoAlum;
+		this.repite = repite;
+	}
+
+	public AlumnoF(String[] campos) {
+		super(campos[2], campos[3], campos[4], campos[5], campos[6], campos[7]);
+		this.paisNacAlum = campos[8];
+		this.nacionalidadAlum = campos[9];
+		this.sexoAlum = campos[10];
+		this.emailAlum = campos[11];
+		this.telefonoAlum = campos[12];
+		this.repite = campos[21];
+
+	}
+	
+	public String getPaisNacAlum() {
+		return paisNacAlum;
+	}
+	public void setPaisNacAlum(String paisNacAlum) {
+		this.paisNacAlum = paisNacAlum;
+	}
+
+	public String getNacionalidadAlum() {
+		return nacionalidadAlum;
+	}
+
+	public void setNacionalidadAlum(String nacionalidadAlum) {
+		this.nacionalidadAlum = nacionalidadAlum;
+	}
+
+	public String getSexoAlum() {
+		return sexoAlum;
+	}
+
+	public void setSexoAlum(String sexoAlum) {
+		this.sexoAlum = sexoAlum;
+	}
+
+	public String getEmailAlum() {
+		return emailAlum;
+	}
+
+	public void setEmailAlum(String emailAlum) {
+		this.emailAlum = emailAlum;
+	}
+
+	public String getTelefonoAlum() {
+		return telefonoAlum;
+	}
+
+	public void setTelefonoAlum(String telefonoAlum) {
+		this.telefonoAlum = telefonoAlum;
+	}
+
+	public String getRepite() {
+		return repite;
+	}
+
+	public void setRepite(String repite) {
+		this.repite = repite;
+	}
+
+
+
+
+}

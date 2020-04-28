@@ -1,0 +1,21 @@
+public class FamiliarF {
+	
+	String tipoIdFamiliar1 = null;
+	String idFamiliar1 = null;
+	String tipoFamiliar1 = null;
+	String nombreFamiliar1 = null;
+	String apell1Familiar1 = null;
+	String apell2Familiar1 = null;
+	String telefonoFamiliar1 = null;
+	String emailFamiliar1 = null;
+
+	
+
+
+
+
+
+
+
+
+}

@@ -28,64 +28,64 @@ public class Principal {
 		 * 	
 		 * ******************************************************************************************************
 		 */
-		 // Proceso de la fase 1
-
-		 
-		 // Proceso de la fase 2
-
-		 listPremat = leerPrematriculas(); //[obj1, obj2, ob3, obt4,...]
+		// Proceso de la fase 1
 
 
-		 // ******************************     Fin procesos automatizados     **********************************
+		// Proceso de la fase 2
+
+		listPremat = leerPrematriculas(); //[obj1, obj2, ob3, obt4,...]
 
 
-		 int op;
+		// ******************************     Fin procesos automatizados     **********************************
 
-		 op=menu();
-		 while(op!=0){
-			 switch (op){
-			 case 1:
 
-				 break;
-			 case 2:					
+		int op;
 
-				 break;
-			 case 3:
+		op=menu();
+		while(op!=0){
+			switch (op){
+			case 1:
 
-				 break;
-			 case 4:
+				break;
+			case 2:					
 
-				 break;
-			 case 5:
+				break;
+			case 3:
 
-				 break;
-			 case 6:
+				break;
+			case 4:
 
-				 break;
-			 case 7:
+				break;
+			case 5:
 
-				 break;
-			 case 8:
+				break;
+			case 6:
 
-				 break;
+				break;
+			case 7:
 
-			 }//switch
+				break;
+			case 8:
 
-			 op=menu();
+				break;
 
-		 }//while
+			}//switch
+
+			op=menu();
+
+		}//while
 
 
 
 	}// Main
 
-/* *********************************************************************************************************
-*                                                 M É T O D O S                                           *
-***********************************************************************************************************/
+	/* *********************************************************************************************************
+	 *                                                 M É T O D O S                                           *
+	 ***********************************************************************************************************/
 
 	public static ArrayList<Prematricula> leerPrematriculas() {
 		ArrayList<Prematricula> capturaDatos;
-		
+
 		String marcaTemporal, email, cadena;
 		AlumnoF alum;
 		CentroF cent = null;
@@ -116,9 +116,21 @@ public class Principal {
 					// Atributos de la clase AlumnoF
 
 					//Creamos el objeto AlumnoF
-					union = Arrays.copyOfRange(campos, 2, (12+1))+campos[21];
-					alum = new AlumnoF(Arrays.copyOfRange(campos, 2, (12+1)), campos[21]);			
+					//union = Arrays.copyOfRange(campos, 2, (12+1))+campos[21];
 
+
+					//creamos el array list para listar los campos contiguos y recorrerlos con el for
+					ArrayList<String> listarCampos = new ArrayList<>();
+					for (int i = 2; i <= 12; i++) {
+						listarCampos.add(campos[i]);
+					}
+					//despues a este arraylist le añadimos el campo 21
+					listarCampos.add(campos[21]);
+					String[] camposConstructor= (String[]) listarCampos.toArray(); 
+					//le pasamos el string al objeto alum
+					alum = new AlumnoF(camposConstructor);			
+
+					//alum = new AlumnoF(Arrays.copyOfRange(campos, 2, (12+1)), campos[21]);
 					// Creamos el objeto CentroF
 					if (campos[13].equals("Sí")) {
 						cent = new CentroF(Arrays.copyOfRange(campos, 13, (20+1)));
@@ -126,13 +138,13 @@ public class Principal {
 
 					// Creamos los objetos familiar1 y familiar 2
 					fam1 = new FamiliarF(Arrays.copyOfRange(campos, 22, (29+1)));
-					
+
 					fam2 = new FamiliarF(Arrays.copyOfRange(campos, 30, (37+1)));
-					
+
 					//Creamos los objetos itinerario1
-					
-					
-					
+
+
+
 
 					cadena = bf.readLine();	 
 

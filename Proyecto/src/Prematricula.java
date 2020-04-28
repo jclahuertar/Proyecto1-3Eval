@@ -7,9 +7,9 @@ public class Prematricula {
 	private String email;
 	
 	private AlumnoF alumno;
-	private CentroF centro = null;
+	private CentroF centro;
 	private FamiliarF familiar1;
-	private FamiliarF familiar2= null;
+	private FamiliarF familiar2;
 	private DestinatarioF destinatario;
 	private ItinerarioF itinerario;
 	

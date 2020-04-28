@@ -119,7 +119,8 @@ public class Principal {
 					//union = Arrays.copyOfRange(campos, 2, (12+1))+campos[21];
 
 
-					//creamos el array list para listar los campos contiguos y recorrerlos con el for
+					//creamos el array list para listar los campos y recorrerlos con el for
+					//de la posicion 2 a la 12 los añadimos
 					ArrayList<String> listarCampos = new ArrayList<>();
 					for (int i = 2; i <= 12; i++) {
 						listarCampos.add(campos[i]);

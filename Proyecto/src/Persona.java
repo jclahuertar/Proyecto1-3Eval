@@ -6,16 +6,14 @@ public class Persona {
 	private String apellidoDos;// [4]
 	private String tipoId;     // [5]
 	private String dni_nie;    // [6]
-	private String fechaNac;   // [7]
+	
 
-	public Persona(String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie,
-			String fechaNac) {
+	public Persona(String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie) {
 		this.nombre = nombre;
 		this.apellidoUno = apellidoUno;
 		this.apellidoDos = apellidoDos;
 		this.tipoId = tipoId;
-		this.dni_nie = dni_nie;
-		this.fechaNac = fechaNac;
+		this.dni_nie = dni_nie;	
 	}
 
 	public String getNombre() {
@@ -57,14 +55,5 @@ public class Persona {
 	public void setDni_nie(String dni_nie) {
 		this.dni_nie = dni_nie;
 	}
-
-	public String getFechaNac() {
-		return fechaNac;
-	}
-
-	public void setFechaNac(String fechaNac) {
-		this.fechaNac = fechaNac;
-	}
-
 	
 }

@@ -2,40 +2,48 @@ public class FamiliarF extends Persona{
 	
 //	nombre, apell1, apell2, tipoId, id, fechaNac  (att de Persona)
 	
-	String tipoIdFamiliar1 = null;
-	String idFamiliar1 = null;
-	String tipoFamiliar1 = null;
-	String nombreFamiliar1 = null;
-	String apell1Familiar1 = null;
-	String apell2Familiar1 = null;
-	String telefonoFamiliar1 = null;
-	String emailFamiliar1 = null;
+	String tipoFamiliar = null;
+	String telefonoFamiliar = null;
+	String emailFamiliar = null;
 	
-	public FamiliarF(String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie,
-			String fechaNac, String tipoIdFamiliar1, String idFamiliar1, String tipoFamiliar1, String nombreFamiliar1,
-			String apell1Familiar1, String apell2Familiar1, String telefonoFamiliar1, String emailFamiliar1) {
-		
-		super(nombre, apellidoUno, apellidoDos, tipoId, dni_nie, fechaNac);
-		
-		this.tipoIdFamiliar1 = tipoIdFamiliar1;
-		this.idFamiliar1 = idFamiliar1;
-		this.tipoFamiliar1 = tipoFamiliar1;
-		this.nombreFamiliar1 = nombreFamiliar1;
-		this.apell1Familiar1 = apell1Familiar1;
-		this.apell2Familiar1 = apell2Familiar1;
-		this.telefonoFamiliar1 = telefonoFamiliar1;
-		this.emailFamiliar1 = emailFamiliar1;
+	public FamiliarF(
+			String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie,
+			String tipoFamiliar, String telefonoFamiliar, String emailFamiliar
+			) {
+		super(nombre, apellidoUno, apellidoDos, tipoId, dni_nie);
+		this.tipoFamiliar = tipoFamiliar;
+		this.telefonoFamiliar = telefonoFamiliar;
+		this.emailFamiliar = emailFamiliar;
+	}
+	//0    		1	2		3		4		5		6			7									
+	//22	    23  24    	25     	26     	27     	28     		29
+	//tipoId	id	tipo	nombre	apell1	apell2	telefono	email
+	public FamiliarF(String[] a) {
+		super(a[3], a[4], a[5], a[0], a[1]);
+		this.tipoFamiliar = a[2];
+		this.telefonoFamiliar = a[6];
+		this.emailFamiliar = a[7];
+	}
+	public String getTipoFamiliar() {
+		return tipoFamiliar;
+	}
+	public void setTipoFamiliar(String tipoFamiliar) {
+		this.tipoFamiliar = tipoFamiliar;
+	}
+	public String getTelefonoFamiliar() {
+		return telefonoFamiliar;
+	}
+	public void setTelefonoFamiliar(String telefonoFamiliar) {
+		this.telefonoFamiliar = telefonoFamiliar;
+	}
+	public String getEmailFamiliar() {
+		return emailFamiliar;
+	}
+	public void setEmailFamiliar(String emailFamiliar) {
+		this.emailFamiliar = emailFamiliar;
 	}
 	
-	
 
 	
-
-
-
-
-
-
-
-
-}
+	
+} // FamiliarF ******************************************************************************************

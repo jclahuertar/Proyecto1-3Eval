@@ -5,73 +5,86 @@ public class AlumnoF extends Persona{
 	//  paisNacAlum, nacionalidadAlum, sexoAlum, emailAlum, telefonoAlum, repite  (att de Alumno)
 
 	//Alumno formulario
-	private String paisNacAlum;      //[8]
-	private String nacionalidadAlum; //[9]
-	private String sexoAlum;         //[10]
-	private String emailAlum;        //[11]
-	private String telefonoAlum;     //[12]
-	private String repite;           //[21]
+	private String fechaNac;
+	private String paisNac;
+	private String nacionalidad; 
+	private String sexo;
+	private String email;
+	private String telefono;
+	private String repite;
 	
 	public AlumnoF(String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie,
-			String fechaNac, String paisNacAlum, String nacionalidadAlum, String sexoAlum, String emailAlum,
-			String telefonoAlum, String repite) {
-		super(nombre, apellidoUno, apellidoDos, tipoId, dni_nie, fechaNac);
-		this.paisNacAlum = paisNacAlum;
-		this.nacionalidadAlum = nacionalidadAlum;
-		this.sexoAlum = sexoAlum;
-		this.emailAlum = emailAlum;
-		this.telefonoAlum = telefonoAlum;
+			String fechaNac, String paisNac, String nacionalidad, String sexo, String email,
+			String telefono, String repite) {
+		super(nombre, apellidoUno, apellidoDos, tipoId, dni_nie);
+		this.fechaNac = fechaNac;
+		this.paisNac = paisNac;
+		this.nacionalidad = nacionalidad;
+		this.sexo = sexo;
+		this.email = email;
+		this.telefono = telefono;
 		this.repite = repite;
 	}
 
-	public AlumnoF(String[] campos) {
-		super(campos[2], campos[3], campos[4], campos[5], campos[6], campos[7]);
-		this.paisNacAlum = campos[8];
-		this.nacionalidadAlum = campos[9];
-		this.sexoAlum = campos[10];
-		this.emailAlum = campos[11];
-		this.telefonoAlum = campos[12];
-		this.repite = campos[21];
+	public AlumnoF(String[] a) {
+		super(a[0], a[1], a[2], a[3], a[4]);
+		this.paisNac = a[5];
+		this.paisNac = a[6];
+		this.nacionalidad = a[7];
+		this.sexo = a[8];
+		this.email = a[9];
+		this.telefono = a[10];
+		this.repite = a[11];
+	
+//	public AlumnoF(String[] campos) {
+//		super(campos[2], campos[3], campos[4], campos[5], campos[6]);
+//		this.paisNacAlum = campos[7];
+//		this.paisNacAlum = campos[8];
+//		this.nacionalidadAlum = campos[9];
+//		this.sexoAlum = campos[10];
+//		this.emailAlum = campos[11];
+//		this.telefonoAlum = campos[12];
+//		this.repite = campos[21];
 
 	}
 	
-	public String getPaisNacAlum() {
-		return paisNacAlum;
+	public String getPaisNac() {
+		return paisNac;
 	}
-	public void setPaisNacAlum(String paisNacAlum) {
-		this.paisNacAlum = paisNacAlum;
-	}
-
-	public String getNacionalidadAlum() {
-		return nacionalidadAlum;
+	public void setPaisNac(String paisNac) {
+		this.paisNac = paisNac;
 	}
 
-	public void setNacionalidadAlum(String nacionalidadAlum) {
-		this.nacionalidadAlum = nacionalidadAlum;
+	public String getNacionalidad() {
+		return nacionalidad;
 	}
 
-	public String getSexoAlum() {
-		return sexoAlum;
+	public void setNacionalidad(String nacionalidad) {
+		this.nacionalidad = nacionalidad;
 	}
 
-	public void setSexoAlum(String sexoAlum) {
-		this.sexoAlum = sexoAlum;
+	public String getSexo() {
+		return sexo;
 	}
 
-	public String getEmailAlum() {
-		return emailAlum;
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
 	}
 
-	public void setEmailAlum(String emailAlum) {
-		this.emailAlum = emailAlum;
+	public String getEmail() {
+		return email;
 	}
 
-	public String getTelefonoAlum() {
-		return telefonoAlum;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public void setTelefonoAlum(String telefonoAlum) {
-		this.telefonoAlum = telefonoAlum;
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
 	public String getRepite() {
@@ -82,7 +95,4 @@ public class AlumnoF extends Persona{
 		this.repite = repite;
 	}
 
-
-
-
-}
+} // AlumnosF *******************************************************************************************

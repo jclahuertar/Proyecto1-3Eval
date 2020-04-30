@@ -30,7 +30,7 @@ public class AlumnoF extends Persona{
 	public AlumnoF(ArrayList<String> a) {
 		//    nombre    apellUno  apellDos  tipoId    dni_nie
 		super(a.get(0), a.get(1), a.get(2), a.get(3), a.get(4));
-		this.paisNac = a.get(5);
+		this.fechaNac = a.get(5);
 		this.paisNac = a.get(6);
 		this.nacionalidad = a.get(7);
 		this.sexo = a.get(8);
@@ -88,7 +88,7 @@ public class AlumnoF extends Persona{
 
 	@Override
 	public String toString() {
-		return "\nFecha de nacimiento " + fechaNac + ", sexo "+ sexo
+		return super.toString() + "\nFecha de nacimiento " + fechaNac + ", sexo "+ sexo
 				+ ", nacido en " + paisNac + ", nacionalidad " + nacionalidad + "\n"
 				+ "email " + email + ", y telefono " + telefono
 				+ ", ¿Es repetidor? " + repite;

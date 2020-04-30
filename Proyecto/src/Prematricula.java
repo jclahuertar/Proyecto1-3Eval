@@ -92,14 +92,20 @@ public class Prematricula {
 
 	@Override
 	public String toString() {
-		return "*****************************\n"
-				+ "Fecha registro: " + marcaTemporal + "           email registrante: " + email + "\n"
-				+ "Datos alumno: " + alumno + "\n"
-				+ "Datos centro: " + centro + "\n"
-				+ "Datos 1º familiar: " + familiar1 + "\n"
-				+ "Datos 2º familiar: " + familiar2 + "\n"
-				+ "Datos destinatario: " + destinatario + "\n"
-				+ "Itinerario: " + itinerario + "\n";
+		return "***********************************************************************************"
+				+ "\nFecha registro: " + marcaTemporal + "           email registrante: " + email
+				+ "\nDatos alumno: " + alumno
+				+ "\n--------------------------------------------"
+				+ "\nDatos centro: " + centro
+				+ "\n--------------------------------------------"
+				+ "\nDatos 1º familiar: " + familiar1
+				+ "\n--------------------------------------------"
+				+ "\nDatos 2º familiar: " + familiar2
+				+ "\n--------------------------------------------"
+				+ "\nDatos destinatario: " + destinatario
+				+ "\n--------------------------------------------"
+				+ "\nItinerario: " + itinerario
+				+ "\n***********************************************************************************";
 	}
 	
 	

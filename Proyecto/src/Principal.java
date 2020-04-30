@@ -1,5 +1,6 @@
 import java.awt.List;
 import java.io.*;
+import java.io.ObjectInputStream.GetField;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -25,11 +26,10 @@ public class Principal {
 		// Proceso de la fase 2
 
 		// creamos la instancia de la colección de prematrículas
-		ArrayList<Prematricula> listPremat = null;
+		ArrayList<Prematricula> listPremat;
 
 		listPremat = leerPrematriculas();
 
-		System.out.println(listPremat.toString());
 
 		// ******************************     Fin procesos automatizados     **********************************
 
@@ -40,7 +40,7 @@ public class Principal {
 		while(op!=0){
 			switch (op){
 			case 1:
-
+				mostrarDatos(listPremat);
 				break;
 			case 2:					
 
@@ -52,7 +52,7 @@ public class Principal {
 
 				break;
 			case 5:
-
+				alumnoAsignatura(listPremat);
 				break;
 			case 6:
 
@@ -81,16 +81,13 @@ public class Principal {
 	/**
 	 * <p>Este método crea un <strong>ArrayList</strong> de prematrículas con todas las líneas que son 
 	 * leídas del archivo de texto <strong>prematrículas.txt</strong>.
-	 * 
 	 *  
-	 * 
-	 * 
 	 * @author  Rogelio Gimeno
 	 * @author  Carlos Lahuerta
 	 * @see     List
 	 * @return  
 	 */
-	
+
 	public static ArrayList<Prematricula> leerPrematriculas() {
 		ArrayList<Prematricula> listaPrematr = new ArrayList<>();
 		ArrayList<String> camposLinea;
@@ -125,10 +122,10 @@ public class Principal {
 					}
 					//después le añadimos el campo 21
 					camposLinea.add(campos[21]);
-					
+
 					//le pasamos el ArraList al objeto alum
 					alumno = new AlumnoF(camposLinea);			
-					
+
 					// Creamos el objeto CentroF
 					if (campos[13].equals("Sí")) {
 						centro = new CentroF(Arrays.copyOfRange(campos, 13, (20+1)));
@@ -143,7 +140,7 @@ public class Principal {
 
 					//Creamos el objeto itinerario Ciencias o Humanidades y CCSS -------------------------						
 					camposLinea = new ArrayList<>();
-					
+
 					//en primer lugar añadimos la modalidad
 					camposLinea.add(campos[47]);
 
@@ -170,23 +167,22 @@ public class Principal {
 					itinerario = new ItinerarioF(camposLinea);	
 
 					//creamos un objeto de clase Prematricula
-						
+
 					unaPrematricula = new Prematricula(marcaTemporal, email, alumno, centro,
 							fam1, fam2, destinatario, itinerario);
 					listaPrematr.add(unaPrematricula);
-					
 					/*
 					 * otra forma de pasar las premactriculas
 					 * 	listaPrematr.add(new Prematricula(marcaTemporal, email, alumno, centro,
 					 *		fam1, fam2, destinatario, itinerario));
 					 * */
-					
+
 					// leemos una nueva líena de la cadena que contiene el archivo
 					cadena = bf.readLine();	 				
 				}//while
-				
+
 				bf.close();
-				
+
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -203,18 +199,46 @@ public class Principal {
 
 	}// ***********************************************************************************
 
+	/*
+	 * LISTAR DATOS DE ALUMNO E ITINERARIO
+	 * 
+	 */
+	public static void alumnoAsignatura(ArrayList<Prematricula> listPremat) {
+		int contador = 1;
+		for (Prematricula prematricula : listPremat) {
+			System.out.println("\n*************************************************************"
+					+ "\nALUMNO " + contador +":"+ prematricula.getAlumno() 
+					+ "\n*********************************************************************"
+					+ "\nITINERARIO: " + prematricula.getItinerario());
+			contador++;
+		}
+
+	}//alumnoAsignatura
+
+	/*
+	 * METODO PARA MOSTRAR TODOS LOS DATOS
+	 * 
+	 */
+	public static void mostrarDatos(ArrayList<Prematricula> listPremat) {
+
+		for (Prematricula prematricula : listPremat) {
+			System.out.println(prematricula);
+		}
+	}
+
 
 	public static int menu() {
 		int op;
 		System.out.println("\nDADO EL SIGUIENTE MENU:\n");
-		System.out.println("(1) Listado de alumnos por modalidad y troncales. "
-				+ "\n(2) Listado de asignaturas específicas del itinerario científico por orden de elección de más a menos elegida. "
-				+ "\n(3) Listado de asignaturas específicas del itinerario tecnológico por orden de elección de más a menos elegida. " 
-				+ "\n(4) Informe individual de cada alumno con su elección de asignaturas. (Tal cual él las cumplimentó en la encuesta, sin tener en cuenta todavía la configuración definitiva de itinerarios. "
-				+ "\n(5) Informe individual de cada alumno con las asignaturas de su elección conforme a los itinerarios que finalmente resulten de la elección de todos los alumnos. Lo que configurará su matrícula definitiva. "
-				+ "\n(6) Informe individual de alumno con todas sus solicitudes para aquellos que tengan más de una encuesta cumplimentada."
-				+ "\n(7) Listado de alumnos identificados con documento distinto a DNI o NIE."
-				+ "\n(8) Listado de alumnos con DNI o NIE incorrectos."
+		System.out.println("(1) Mostrar todos los datos. "
+				+ "\n(2) Listado de alumnos por modalidad y troncales. "
+				+ "\n(3) Listado de asignaturas específicas del itinerario científico por orden de elección de más a menos elegida. "
+				+ "\n(4) Listado de asignaturas específicas del itinerario tecnológico por orden de elección de más a menos elegida. " 
+				+ "\n(5) Informe individual de cada alumno con su elección de asignaturas. (Tal cual él las cumplimentó en la encuesta, sin tener en cuenta todavía la configuración definitiva de itinerarios. "
+				+ "\n(6) Informe individual de cada alumno con las asignaturas de su elección conforme a los itinerarios que finalmente resulten de la elección de todos los alumnos. Lo que configurará su matrícula definitiva. "
+				+ "\n(7) Informe individual de alumno con todas sus solicitudes para aquellos que tengan más de una encuesta cumplimentada."
+				+ "\n(8) Listado de alumnos identificados con documento distinto a DNI o NIE."
+				+ "\n(9) Listado de alumnos con DNI o NIE incorrectos."
 				+ "\n(0) SALIR");
 
 		op = Leer.pedirEntero("\nELIJA UNA OPCION");

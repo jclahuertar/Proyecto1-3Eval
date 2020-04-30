@@ -10,18 +10,6 @@ public class CentroF {
 	private String cpCentro;
 	private String telefonoCentro;
 
-//	public CentroF(String otroCentro, String nombreCentro, String comunidadCentro, String provinciaCentro,
-//			String direccionCentro, String localidadCentro, String cpCentro, String telefonoCentro) {
-//		this.otroCentro = otroCentro;
-//		this.nombreCentro = nombreCentro;
-//		this.comunidadCentro = comunidadCentro;
-//		this.provinciaCentro = provinciaCentro;
-//		this.direccionCentro = direccionCentro;
-//		this.localidadCentro = localidadCentro;
-//		this.cpCentro = cpCentro;
-//		this.telefonoCentro = telefonoCentro;
-//	}
-	
 	public CentroF(String[] campos) {
 		this.otroCentro = campos[0];
 		this.nombreCentro = campos[1];
@@ -34,14 +22,9 @@ public class CentroF {
 	}
 
 
-	
-
 	public String getOtroCentro() {
 		return otroCentro;
 	}
-
-
-
 
 
 	public void setOtroCentro(String otroCentro) {
@@ -49,15 +32,9 @@ public class CentroF {
 	}
 
 
-
-
-
 	public String getNombreCentro() {
 		return nombreCentro;
 	}
-
-
-
 
 
 	public void setNombreCentro(String nombreCentro) {
@@ -65,15 +42,9 @@ public class CentroF {
 	}
 
 
-
-
-
 	public String getComunidadCentro() {
 		return comunidadCentro;
 	}
-
-
-
 
 
 	public void setComunidadCentro(String comunidadCentro) {
@@ -81,15 +52,9 @@ public class CentroF {
 	}
 
 
-
-
-
 	public String getProvinciaCentro() {
 		return provinciaCentro;
 	}
-
-
-
 
 
 	public void setProvinciaCentro(String provinciaCentro) {
@@ -97,15 +62,9 @@ public class CentroF {
 	}
 
 
-
-
-
 	public String getDireccionCentro() {
 		return direccionCentro;
 	}
-
-
-
 
 
 	public void setDireccionCentro(String direccionCentro) {
@@ -113,15 +72,9 @@ public class CentroF {
 	}
 
 
-
-
-
 	public String getLocalidadCentro() {
 		return localidadCentro;
 	}
-
-
-
 
 
 	public void setLocalidadCentro(String localidadCentro) {
@@ -129,15 +82,9 @@ public class CentroF {
 	}
 
 
-
-
-
 	public String getCpCentro() {
 		return cpCentro;
 	}
-
-
-
 
 
 	public void setCpCentro(String cpCentro) {
@@ -145,23 +92,14 @@ public class CentroF {
 	}
 
 
-
-
-
 	public String getTelefonoCentro() {
 		return telefonoCentro;
 	}
 
 
-
-
-
 	public void setTelefonoCentro(String telefonoCentro) {
 		this.telefonoCentro = telefonoCentro;
 	}
-
-
-
 
 
 	@Override
@@ -171,7 +109,7 @@ public class CentroF {
 				+ "\nProvincia " + provinciaCentro + ", CCAA: "+ comunidadCentro
 				+ "\nTelefono: " + telefonoCentro;
 	}
-	
-	
-	
+
+
+
 }

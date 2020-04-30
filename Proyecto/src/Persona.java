@@ -1,12 +1,12 @@
 
-public class Persona {
-	
+public class Persona implements Comparable<Persona> {
+
 	private String nombre;     // [2]
 	private String apellidoUno;// [3]
 	private String apellidoDos;// [4]
 	private String tipoId;     // [5]
 	private String dni_nie;    // [6]
-	
+
 
 	public Persona(String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie) {
 		this.nombre = nombre;
@@ -60,7 +60,16 @@ public class Persona {
 	public String toString() {
 		return nombre + " " + apellidoUno + " " + apellidoDos + ", con " + tipoId + " " + dni_nie + ", ";
 	}
-	
-	
-	
+
+
+	@Override
+	public int compareTo(Persona per) {
+		String cadena1, cadena2;
+		cadena1 = apellidoUno + nombre;
+		cadena2 = per.apellidoUno + per.nombre;
+		return cadena1.compareTo(cadena2);
+	}
+
+
+
 }// Persona

@@ -54,10 +54,13 @@ public class ItinerarioF {
 
 	@Override
 	public String toString() {
-		return "ItinerarioF [modalidad=" + modalidad + ", trc1=" + trc1 + ", trc2=" + trc2 + ", trc3=" + trc3
-				+ ", trc4=" + trc4 + ", esp1=" + esp1 + ", esp2=" + esp2 + ", trcO1=" + trcO1 + ", trcO2=" + trcO2
-				+ ", opc1=" + opc1 + ", opc2=" + opc2 + ", opc3=" + opc3 + ", espO1=" + espO1 + ", espO2=" + espO2
-				+ ", espO3=" + espO3 + ", espO4=" + espO4 + "]";
+		return 	"Modalidad: " + modalidad 
+				+ "\nTroncal 1: " + trc1 + ", Troncal 2: " + trc2 + ", Troncal 3: " + trc3 + ", Troncal 4: " + trc4 
+				+ "\nEspecifica 1: " + esp1 + ", Especifica 2: " + esp2 
+				+ "\nTroncal Opcional 1: " + trcO1 + ", Troncal Opcional 2: " + trcO2
+				+ "\nOpcional 1: " + opc1 + ", Opcional 2: " + opc2 + ", Opcional 3: " + opc3 
+				+ "\nEspecifica Opcional 1: " + espO1 + ", Especifica Opcional 2: " + espO2 
+				+ "\nEspecifica Opcional 3: " + espO3 + ", Especifica Opcional 4: " + espO4;
 	}
 
 	

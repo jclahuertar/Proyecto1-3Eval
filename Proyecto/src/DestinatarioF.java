@@ -5,13 +5,6 @@ public class DestinatarioF {
 	String domicilio;
 	String localidad;
 	String cp;
-	
-//	public DestinatarioF(String nombre, String domicilio, String localidad, String cp) {
-//		this.nombre = nombre;
-//		this.domicilio = domicilio;
-//		this.localidad = localidad;
-//		this.cp = cp;
-//	}
 
 	public DestinatarioF(String[] a) {
 		this.nombre = a[0];
@@ -26,9 +19,6 @@ public class DestinatarioF {
 				+ domicilio +"\n"
 				+ cp +" " + localidad;
 	}
-	
-	
-	
-	
+		
 	
 }

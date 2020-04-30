@@ -41,6 +41,11 @@ public class FamiliarF extends Persona{
 	public void setEmailFamiliar(String emailFamiliar) {
 		this.emailFamiliar = emailFamiliar;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + tipoFamiliar + ", Teléfono del familiar: " + telefonoFamiliar + ", email del familiar: " + emailFamiliar;
+	}
 	
 
 	

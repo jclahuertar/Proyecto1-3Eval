@@ -2,20 +2,19 @@
 public class Prematricula {
 
 	// todos los atributos de clase son de tipo string, pero los separamos en su declaración por bloques homogéneos
-	
+
 	private String marcaTemporal;
 	private String email;
-	
+
 	private AlumnoF alumno;
 	private CentroF centro;
 	private FamiliarF familiar1;
 	private FamiliarF familiar2;
 	private DestinatarioF destinatario;
 	private ItinerarioF itinerario;
-	
+
 	public Prematricula(String marcaTemporal, String email, AlumnoF alumno, CentroF centro, FamiliarF familiar1,
 			FamiliarF familiar2, DestinatarioF destinatario, ItinerarioF itinerario) {
-		//super();
 		this.marcaTemporal = marcaTemporal;
 		this.email = email;
 		this.alumno = alumno;
@@ -92,7 +91,7 @@ public class Prematricula {
 
 	@Override
 	public String toString() {
-		return "***********************************************************************************"
+		return 	  "*************************************************************************************"
 				+ "\nFecha registro: " + marcaTemporal + "           email registrante: " + email
 				+ "\nDatos alumno: " + alumno
 				+ "\n--------------------------------------------"
@@ -107,15 +106,6 @@ public class Prematricula {
 				+ "\nItinerario: " + itinerario
 				+ "\n***********************************************************************************";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }// class
 

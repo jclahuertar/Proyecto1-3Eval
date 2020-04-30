@@ -170,10 +170,16 @@ public class Principal {
 					itinerario = new ItinerarioF(camposLinea);	
 
 					//creamos un objeto de clase Prematricula
-					
+						
 					unaPrematricula = new Prematricula(marcaTemporal, email, alumno, centro,
 							fam1, fam2, destinatario, itinerario);
 					listaPrematr.add(unaPrematricula);
+					
+					/*
+					 * otra forma de pasar las premactriculas
+					 * 	listaPrematr.add(new Prematricula(marcaTemporal, email, alumno, centro,
+					 *		fam1, fam2, destinatario, itinerario));
+					 * */
 					
 					// leemos una nueva líena de la cadena que contiene el archivo
 					cadena = bf.readLine();	 				

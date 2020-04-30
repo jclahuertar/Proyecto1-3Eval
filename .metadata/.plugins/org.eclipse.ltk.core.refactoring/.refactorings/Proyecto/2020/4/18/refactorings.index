@@ -2,3 +2,7 @@
 1588014282774	Rename type 'Destinatario'
 1588014296069	Rename type 'Domicilio'
 1588014316140	Rename type 'Itinerario'
+1588199116228	Rename local variable 'listarCampos'
+1588199256975	Rename local variable 'listaCampos'
+1588202809993	Rename local variable 'prematricula'
+1588202820652	Rename local variable 'UnaPrematricula'

@@ -8,29 +8,30 @@ public class Principal {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-/* ******************************************************************************************************
-* Proceso automatizado sin intervención del usuario que consta de tres fases:
-* 
-* 1. Carga del fichero de datos de alumnos denominado alumnos.txt en la carpeta por defecto del proyecto y creacion
-* de la colección o colecciones correspondientes.
-* 
-* 2. Carga del fichero de prematriculas denominado prematriculas.txt en la carpeta por defecto del proyecto y creacion
-* de la colección prematriculas.
-* 	
-* ******************************************************************************************************
-*/
-	// Proceso de la fase 1
+		/* ******************************************************************************************************
+		 * Proceso automatizado sin intervención del usuario que consta de tres fases:
+		 * 
+		 * 1. Carga del fichero de datos de alumnos denominado alumnos.txt en la carpeta por defecto del proyecto y creacion
+		 * de la colección o colecciones correspondientes.
+		 * 
+		 * 2. Carga del fichero de prematriculas denominado prematriculas.txt en la carpeta por defecto del proyecto y creacion
+		 * de la colección prematriculas.
+		 * 	
+		 * ******************************************************************************************************
+		 */
+		// Proceso de la fase 1
 		//Pendiente de desarrollar
 
-	// Proceso de la fase 2
-		
+		// Proceso de la fase 2
+
 		// creamos la instancia de la colección de prematrículas
 		ArrayList<Prematricula> listPremat = null;
 
 		listPremat = leerPrematriculas();
 
+		System.out.println(listPremat.toString());
 
-// ******************************     Fin procesos automatizados     **********************************
+		// ******************************     Fin procesos automatizados     **********************************
 
 		// Mostramos el menú
 		int op;
@@ -73,116 +74,113 @@ public class Principal {
 
 	}// Main
 
-/* *********************************************************************************************************
-*                                                 M É T O D O S                                           *
-***********************************************************************************************************/
+	/* *********************************************************************************************************
+	 *                                                 M É T O D O S                                           *
+	 ***********************************************************************************************************/
 
+	/**
+	 * <p>Este método crea un <strong>ArrayList</strong> de prematrículas con todas las líneas que son 
+	 * leídas del archivo de texto <strong>prematrículas.txt</strong>.
+	 * 
+	 *  
+	 * 
+	 * 
+	 * @author  Rogelio Gimeno
+	 * @author  Carlos Lahuerta
+	 * @see     List
+	 * @return  
+	 */
+	
 	public static ArrayList<Prematricula> leerPrematriculas() {
-		ArrayList<Prematricula> capturaDatos = null;
-
+		ArrayList<Prematricula> listaPrematr = new ArrayList<>();
+		ArrayList<String> camposLinea;
 		String marcaTemporal, email, cadena;
 		AlumnoF alumno;
 		CentroF centro = null;
 		FamiliarF fam1;
-		FamiliarF fam2 =null;
+		FamiliarF fam2;
 		DestinatarioF destinatario;
-		ItinerarioF itinerario = null;
-		
+		ItinerarioF itinerario;
+		Prematricula unaPrematricula;
 
 		// cargamos el fichero de texto
 		File archivo = new File("prematriculas.txt");
-
 		if (archivo.exists()) {
-			//System.out.println("El fichero existe");
 			try {
 				// Leemos las líneas del fichero
 				BufferedReader bf = new BufferedReader(new FileReader(archivo));
 				cadena = bf.readLine();		
-
 				while(cadena!=null) {
-					//extraer datos del txt.. separados 
-
+					//extraer datos del txt separados 
 					String[] campos = cadena.split("~");							
 					// Son atributos de la clase Prematricula
 					marcaTemporal = campos[0];  
 					email = campos[1];
 
-					// Atributos de la clase AlumnoF
-
-					//Creamos el objeto AlumnoF
-					//union = Arrays.copyOfRange(campos, 2, (12+1))+campos[21];
-
-
-					//creamos el array list para listar los campos y recorrerlos con el for
-					//de la posicion 2 a la 12 los añadimos
-					ArrayList<String> listarCampos = new ArrayList<>();
+					//Creamos el objeto AlumnoF -----------------------------------------------------
+					camposLinea = new ArrayList<>();
+					//creamos el arraylist para recoger los campos 2 a 12 recorriéndolos con el for	
 					for (int i = 2; i <= 12; i++) {
-						listarCampos.add(campos[i]);
+						camposLinea.add(campos[i]);
 					}
-					//despues a este arraylist le añadimos el campo 21
-					listarCampos.add(campos[21]);
-					String[] camposConstructor = (String[]) listarCampos.toArray(); 
-					//le pasamos el string al objeto alum
-					alumno = new AlumnoF(camposConstructor);			
-
-					//alum = new AlumnoF(Arrays.copyOfRange(campos, 2, (12+1)), campos[21]);
+					//después le añadimos el campo 21
+					camposLinea.add(campos[21]);
+					
+					//le pasamos el ArraList al objeto alum
+					alumno = new AlumnoF(camposLinea);			
+					
 					// Creamos el objeto CentroF
 					if (campos[13].equals("Sí")) {
 						centro = new CentroF(Arrays.copyOfRange(campos, 13, (20+1)));
 					}
 
-					// Creamos los objetos familiar 1 y familiar 2
-
+					// Creamos los objetos familiar 1 y familiar 2 ---------------------------------------							
 					fam1 = new FamiliarF(Arrays.copyOfRange(campos, 22, (29+1)));
-
 					fam2 = new FamiliarF(Arrays.copyOfRange(campos, 30, (37+1)));
 
-					
-					//Creamos los objetos itinerario Destinatario
-					
+					//Creamos los objetos destinatario ---------------------------------------------------
 					destinatario = new DestinatarioF(Arrays.copyOfRange(campos, 38, (41+1)));
+
+					//Creamos el objeto itinerario Ciencias o Humanidades y CCSS -------------------------						
+					camposLinea = new ArrayList<>();
 					
-					
-					//Creamos los objetos itinerario Ciencias o Humanidades y CCSS
-					listarCampos = new ArrayList<>();
-					for (int i = 2; i <= 12; i++) {
-						listarCampos.add(campos[i]);
-					
-					
-					if(campos[47].equals("Ciencias")) {
-						
-						itinerario = new ItinerarioF(Arrays.copyOfRange(campos, , (+1)));
-						
-						
-					} else if(campos[47].equals("Humanidades y Ciencias Sociales")) {
-						
-						listarCampos = new ArrayList<>();
-						for (int i = 2; i <= 12; i++) {
-							listarCampos.add(campos[i]);
-						}
-						//despues a este arraylist le añadimos el campo 21
-						listarCampos.add(campos[21]);
-						String[] camposConstructor = (String[]) listarCampos.toArray(); 
-						//le pasamos el string al objeto alum
-						
-						itinerario = new ItinerarioF(Arrays.copyOfRange(campos, , (+1)));
-						
-					} else {
-						System.out.println("Itinearario no definido");
+					//en primer lugar añadimos la modalidad
+					camposLinea.add(campos[47]);
+
+					// añadimos las materias comunes a ambas modalidades. Campos 42 a 46
+					for (int i = 42; i <= 46; i++) {
+						camposLinea.add(campos[i]);
 					}
+					// discriminamos entre las asignaturas de la modalidad de Ciencias y Humanidades y CCSS
+					if(campos[47].equals("Ciencias")) {
+						// de los campos 48 a 53 son exclusivos del itinerario de Ciencias
+						for (int i = 48; i <= 53; i++) {
+							camposLinea.add(campos[i]);
+						}
+					} else if(campos[47].equals("Humanidades y Ciencias Sociales")) {
+						// de los campos 54 a 59 son exclusivos del itinerario de Humanidades y CCSS
+						for (int i = 54; i <= 59; i++) {
+							camposLinea.add(campos[i]);
+						}
+					}					
+					// añadimos prelación de las materias optativas. Campos 60 al 63
+					for (int i = 60; i <= 63; i++) {
+						camposLinea.add(campos[i]);
+					}	
+					itinerario = new ItinerarioF(camposLinea);	
+
+					//creamos un objeto de clase Prematricula
 					
-
-
-
-					cadena = bf.readLine();	 
-
-
+					unaPrematricula = new Prematricula(marcaTemporal, email, alumno, centro,
+							fam1, fam2, destinatario, itinerario);
+					listaPrematr.add(unaPrematricula);
+					
+					// leemos una nueva líena de la cadena que contiene el archivo
+					cadena = bf.readLine();	 				
 				}//while
-
+				
 				bf.close();
-
-
-
+				
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -191,19 +189,16 @@ public class Principal {
 				e.printStackTrace();
 			}
 
-			System.out.println(archivo);
-
 		} else {
 			System.out.println("El fichero no existe");
 		}
 
-		return capturaDatos;
+		return listaPrematr;
 
 	}// ***********************************************************************************
 
 
 	public static int menu() {
-
 		int op;
 		System.out.println("\nDADO EL SIGUIENTE MENU:\n");
 		System.out.println("(1) Listado de alumnos por modalidad y troncales. "
@@ -218,7 +213,6 @@ public class Principal {
 
 		op = Leer.pedirEntero("\nELIJA UNA OPCION");
 		return op;
-
 	} //menu
 
 }// Principal

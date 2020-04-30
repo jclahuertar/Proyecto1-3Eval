@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class AlumnoF extends Persona{
 
@@ -13,39 +14,29 @@ public class AlumnoF extends Persona{
 	private String telefono;
 	private String repite;
 	
-	public AlumnoF(String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie,
-			String fechaNac, String paisNac, String nacionalidad, String sexo, String email,
-			String telefono, String repite) {
-		super(nombre, apellidoUno, apellidoDos, tipoId, dni_nie);
-		this.fechaNac = fechaNac;
-		this.paisNac = paisNac;
-		this.nacionalidad = nacionalidad;
-		this.sexo = sexo;
-		this.email = email;
-		this.telefono = telefono;
-		this.repite = repite;
-	}
+//	public AlumnoF(String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie,
+//			String fechaNac, String paisNac, String nacionalidad, String sexo, String email,
+//			String telefono, String repite) {
+//		super(nombre, apellidoUno, apellidoDos, tipoId, dni_nie);
+//		this.fechaNac = fechaNac;
+//		this.paisNac = paisNac;
+//		this.nacionalidad = nacionalidad;
+//		this.sexo = sexo;
+//		this.email = email;
+//		this.telefono = telefono;
+//		this.repite = repite;
+//	}
 
-	public AlumnoF(String[] a) {
-		super(a[0], a[1], a[2], a[3], a[4]);
-		this.paisNac = a[5];
-		this.paisNac = a[6];
-		this.nacionalidad = a[7];
-		this.sexo = a[8];
-		this.email = a[9];
-		this.telefono = a[10];
-		this.repite = a[11];
-	
-//	public AlumnoF(String[] campos) {
-//		super(campos[2], campos[3], campos[4], campos[5], campos[6]);
-//		this.paisNacAlum = campos[7];
-//		this.paisNacAlum = campos[8];
-//		this.nacionalidadAlum = campos[9];
-//		this.sexoAlum = campos[10];
-//		this.emailAlum = campos[11];
-//		this.telefonoAlum = campos[12];
-//		this.repite = campos[21];
-
+	public AlumnoF(ArrayList<String> a) {
+		//    nombre    apellUno  apellDos  tipoId    dni_nie
+		super(a.get(0), a.get(1), a.get(2), a.get(3), a.get(4));
+		this.paisNac = a.get(5);
+		this.paisNac = a.get(6);
+		this.nacionalidad = a.get(7);
+		this.sexo = a.get(8);
+		this.email = a.get(9);
+		this.telefono = a.get(10);
+		this.repite = a.get(11);
 	}
 	
 	public String getPaisNac() {
@@ -95,4 +86,14 @@ public class AlumnoF extends Persona{
 		this.repite = repite;
 	}
 
-} // AlumnosF *******************************************************************************************
+	@Override
+	public String toString() {
+		return "\nFecha de nacimiento " + fechaNac + ", sexo "+ sexo
+				+ ", nacido en " + paisNac + ", nacionalidad " + nacionalidad + "\n"
+				+ "email " + email + ", y telefono " + telefono
+				+ ", ¿Es repetidor? " + repite;
+	}
+
+	
+	
+}// AlumnoF

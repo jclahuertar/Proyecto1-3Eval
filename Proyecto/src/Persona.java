@@ -55,5 +55,12 @@ public class Persona {
 	public void setDni_nie(String dni_nie) {
 		this.dni_nie = dni_nie;
 	}
+
+	@Override
+	public String toString() {
+		return nombre + " " + apellidoUno + " " + apellidoDos + ", con " + tipoId + " " + dni_nie + ", ";
+	}
 	
-}
+	
+	
+}// Persona

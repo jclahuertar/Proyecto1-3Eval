@@ -14,19 +14,6 @@ public class AlumnoF extends Persona{
 	private String telefono;
 	private String repite;
 	
-//	public AlumnoF(String nombre, String apellidoUno, String apellidoDos, String tipoId, String dni_nie,
-//			String fechaNac, String paisNac, String nacionalidad, String sexo, String email,
-//			String telefono, String repite) {
-//		super(nombre, apellidoUno, apellidoDos, tipoId, dni_nie);
-//		this.fechaNac = fechaNac;
-//		this.paisNac = paisNac;
-//		this.nacionalidad = nacionalidad;
-//		this.sexo = sexo;
-//		this.email = email;
-//		this.telefono = telefono;
-//		this.repite = repite;
-//	}
-
 	public AlumnoF(ArrayList<String> a) {
 		//    nombre    apellUno  apellDos  tipoId    dni_nie
 		super(a.get(0), a.get(1), a.get(2), a.get(3), a.get(4));

@@ -79,8 +79,8 @@ public class Principal {
 	 ***********************************************************************************************************/
 
 	/**
-	 * <p>Este método crea un <strong>ArrayList</strong> de prematrículas con todas las líneas que son 
-	 * leídas del archivo de texto <strong>prematrículas.txt</strong>.
+	 * <p>Este método crea un <b>ArrayList</b> de prematrículas con todas las líneas que son 
+	 * leídas del archivo de texto <b>prematrículas.txt</b>.
 	 *  
 	 * @author  Rogelio Gimeno
 	 * @author  Carlos Lahuerta
